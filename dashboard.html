@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Laju</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Open Graph / Social preview (disuntik otomatis) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Laju" />
+  <meta property="og:title" content="Dashboard — Laju" />
+  <meta property="og:description" content="Hosting cepat & andal: NVMe, SSL gratis, uptime 99,9%, dukungan 24/7." />
+  <meta property="og:url" content="https://lajucloud.id/dashboard.html" />
+  <meta property="og:image" content="https://lajucloud.id/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dashboard — Laju" />
+  <meta name="twitter:description" content="Hosting cepat & andal: NVMe, SSL gratis, uptime 99,9%, dukungan 24/7." />
+  <meta name="twitter:image" content="https://lajucloud.id/og-image.png" />
+  <link rel="canonical" href="https://lajucloud.id/dashboard.html" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="dash">
+    <div class="container dash-grid">
+      <!-- Sidebar -->
+      <aside class="dash-side">
+        <div class="dash-user">
+          <div class="ava" id="userAva">–</div>
+          <strong id="userName">–</strong>
+          <small id="userEmail">–</small>
+        </div>
+        <nav class="dash-nav">
+          <a href="#ringkasan" class="active">📊 Ringkasan</a>
+          <a href="#layanan">🖥️ Layanan Saya</a>
+          <a href="#domain">🌐 Domain</a>
+          <a href="#penggunaan">📈 Penggunaan</a>
+          <a href="#tagihan">🧾 Tagihan</a>
+          <a href="#tiket">🎫 Tiket</a>
+          <a href="#profil">👤 Profil</a>
+          <a href="#keamanan">🔒 Keamanan</a>
+          <a href="index.html#harga">➕ Pesan Baru</a>
+        </nav>
+      </aside>
+
+      <!-- Konten -->
+      <div class="dash-main">
+        <div class="dash-welcome reveal">
+          <h1 id="welcomeTitle">Halo! 👋</h1>
+          <p>Selamat datang di pusat kendali hosting Anda.</p>
+        </div>
+
+        <!-- KPI -->
+        <section class="kpi-row" id="ringkasan">
+          <div class="kpi reveal"><div class="k-ic">🖥️</div><div class="k-num" id="kpiServices">0</div><div class="k-lbl">Layanan aktif</div></div>
+          <div class="kpi reveal"><div class="k-ic">🌐</div><div class="k-num" id="kpiDomains">0</div><div class="k-lbl">Domain terdaftar</div></div>
+          <div class="kpi reveal"><div class="k-ic">🧾</div><div class="k-num" id="kpiBill">Rp0</div><div class="k-lbl">Tagihan bulan ini</div></div>
+        </section>
+
+        <!-- Layanan -->
+        <section class="panel reveal" id="layanan">
+          <div class="panel-head">
+            <h2>🖥️ Layanan Hosting</h2>
+            <a href="index.html#harga" class="btn btn-primary btn-xs">+ Tambah Layanan</a>
+          </div>
+          <div id="servicesArea"></div>
+        </section>
+
+        <!-- Domain -->
+        <section class="panel reveal" id="domain">
+          <div class="panel-head"><h2>🌐 Domain</h2></div>
+          <div id="domainsArea"></div>
+        </section>
+
+        <!-- Penggunaan Sumber Daya -->
+        <section class="panel reveal" id="penggunaan">
+          <div class="panel-head"><h2>📈 Penggunaan Sumber Daya</h2></div>
+          <div id="usageArea"></div>
+        </section>
+
+        <!-- Tagihan -->
+        <section class="panel reveal" id="tagihan">
+          <div class="panel-head"><h2>🧾 Riwayat Tagihan</h2></div>
+          <div id="billAlert"></div>
+          <div id="invoicesArea"></div>
+        </section>
+
+        <!-- Tiket -->
+        <section class="panel reveal" id="tiket">
+          <div class="panel-head">
+            <h2>🎫 Tiket Dukungan</h2>
+            <a href="bantuan.html" class="btn btn-primary btn-xs">+ Tiket Baru</a>
+          </div>
+          <div id="ticketsArea"></div>
+        </section>
+
+        <!-- Profil -->
+        <section class="panel reveal" id="profil">
+          <div class="panel-head"><h2>👤 Profil Saya</h2></div>
+          <form id="profileForm" style="max-width:460px">
+            <div class="field">
+              <label for="pName">Nama Lengkap</label>
+              <input type="text" id="pName" />
+            </div>
+            <div class="field">
+              <label for="pEmail">Email</label>
+              <input type="email" id="pEmail" disabled />
+              <span class="hint">Email tidak dapat diubah pada akun demo.</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+            <button type="button" class="btn btn-danger btn-xs" id="resetData" style="margin-left:8px">Hapus semua data demo</button>
+          </form>
+        </section>
+
+        <!-- Keamanan -->
+        <section class="panel reveal" id="keamanan">
+          <div class="panel-head"><h2>🔒 Keamanan</h2></div>
+          <div id="securityArea"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const { Auth, Services, Billing, Tickets, PLANS, toast, modal, rp, store } = window.NH;
+      const user = Auth.require();          // wajib login
+      if (!user) return;
+
+      // Header sidebar
+      const initials = user.name.split(' ').map(s => s[0]).slice(0,2).join('').toUpperCase();
+      document.getElementById('userAva').textContent = initials;
+      document.getElementById('userName').textContent = user.name;
+      document.getElementById('userEmail').textContent = user.email;
+      document.getElementById('welcomeTitle').textContent = `Halo, ${user.name.split(' ')[0]}! 👋`;
+      document.getElementById('pName').value = user.name;
+      document.getElementById('pEmail').value = user.email;
+
+      Billing.seedMissing(); // lengkapi data lama agar punya invoice & masa aktif
+
+      const fmtDate = (ts) => new Date(ts).toLocaleDateString('id-ID', { day:'2-digit', month:'short', year:'numeric' });
+      const cycleLabel = (c) => c === 'yearly' ? 'Tahunan' : 'Bulanan';
+      const cycleShort = (c) => c === 'yearly' ? 'thn' : 'bln';
+      const isExpired = (s) => s.expiresAt && s.expiresAt < Date.now();
+
+      // Angka penggunaan "stabil" (deterministik dari ID, bukan acak)
+      const hashFrac = (str, salt) => {
+        let h = salt || 0;
+        for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) % 100000;
+        return h / 100000; // 0..1
+      };
+      const planGB = (s) => {
+        const str = String(s.storage || '10');
+        const n = parseFloat(str.replace(/[^0-9.]/g, '')) || 10;
+        return /tb/i.test(str) ? n * 1000 : n; // "1 TB" → 1000 GB
+      };
+      const BW_CAP = { pemula: 100, bisnis: 500, premium: 1500,
+        'vps-starter': 1000, 'vps-pro': 3000, 'vps-max': 6000,
+        'ded-entry': 10000, 'ded-power': 20000, 'ded-enterprise': 50000 };
+
+      /* ---------- RENDER ---------- */
+      function render() {
+        const svcs = Services.mine();
+        const invs = Billing.mine().slice().sort((a,b) => b.date - a.date);
+        const pending = invs.filter(i => i.status === 'pending');
+        const withDomain = svcs.filter(s => s.domain);
+        const monthlyTotal = svcs.filter(s => !isExpired(s))
+          .reduce((sum, s) => sum + (s.cycle === 'yearly' ? Math.round(s.price/12) : s.price), 0);
+
+        document.getElementById('kpiServices').textContent = svcs.filter(s => !isExpired(s)).length;
+        document.getElementById('kpiDomains').textContent = withDomain.length;
+        document.getElementById('kpiBill').textContent = rp(monthlyTotal);
+
+        // --- Layanan ---
+        const sa = document.getElementById('servicesArea');
+        if (!svcs.length) {
+          sa.innerHTML = `<div class="empty"><div class="e-ic">📦</div><p>Belum ada layanan. <a href="index.html#harga" style="color:var(--indigo);font-weight:600">Pesan paket pertama Anda →</a></p></div>`;
+        } else {
+          sa.innerHTML = `<div class="table-wrap"><table class="table">
+            <thead><tr><th>ID</th><th>Paket</th><th>Domain</th><th>Siklus</th><th>Harga</th><th>Kedaluwarsa</th><th>Status</th><th>Aksi</th></tr></thead>
+            <tbody>${svcs.map(s => {
+              const exp = isExpired(s);
+              return `
+              <tr>
+                <td>${s.id}</td>
+                <td><strong>${s.planName}</strong></td>
+                <td>${s.domain || '—'}</td>
+                <td>${cycleLabel(s.cycle)}</td>
+                <td>${rp(s.price)}</td>
+                <td>${s.expiresAt ? fmtDate(s.expiresAt) : '—'}</td>
+                <td><span class="tag ${exp ? 'tag-red' : 'tag-green'}">${exp ? 'Kedaluwarsa' : 'Aktif'}</span></td>
+                <td><div class="t-act">
+                  <button class="btn btn-outline btn-xs" data-action="upgrade" data-id="${s.id}">Ubah Paket</button>
+                  <button class="btn btn-primary btn-xs" data-action="renew" data-id="${s.id}">Perpanjang</button>
+                  <button class="btn btn-danger btn-xs" data-action="del" data-id="${s.id}">Hapus</button>
+                </div></td>
+              </tr>`;
+            }).join('')}
+            </tbody></table></div>`;
+        }
+
+        // --- Domain ---
+        const da = document.getElementById('domainsArea');
+        if (!withDomain.length) {
+          da.innerHTML = `<div class="empty"><div class="e-ic">🌐</div><p>Belum ada domain terdaftar.</p></div>`;
+        } else {
+          da.innerHTML = `<div class="table-wrap"><table class="table">
+            <thead><tr><th>Domain</th><th>Terhubung ke</th><th>Kedaluwarsa</th><th>Status</th></tr></thead>
+            <tbody>${withDomain.map(s => `
+              <tr>
+                <td><strong>${s.domain}</strong></td>
+                <td>${s.planName}</td>
+                <td>${fmtDate(s.expiresAt || (s.createdAt + 365*24*3600*1000))}</td>
+                <td><span class="tag ${isExpired(s) ? 'tag-red' : 'tag-blue'}">${isExpired(s) ? 'Kedaluwarsa' : 'Terhubung'}</span></td>
+              </tr>`).join('')}
+            </tbody></table></div>`;
+        }
+
+        // --- Penggunaan sumber daya (angka deterministik dari ID) ---
+        const ua = document.getElementById('usageArea');
+        const activeSvcs = svcs.filter(s => !isExpired(s));
+        if (!activeSvcs.length) {
+          ua.innerHTML = `<div class="empty"><div class="e-ic">📈</div><p>Belum ada layanan aktif untuk dipantau.</p></div>`;
+        } else {
+          const cls = (p) => p > 95 ? 'crit' : p > 80 ? 'warn' : '';
+          ua.innerHTML = activeSvcs.map(s => {
+            const totalGB = planGB(s);
+            const usedGB = +(totalGB * (0.2 + hashFrac(s.id, 1) * 0.6)).toFixed(1);
+            const stPct = Math.min(100, Math.round(usedGB / totalGB * 100));
+            const bwCap = BW_CAP[s.plan] || 100;
+            const bwUsed = Math.round(bwCap * (0.1 + hashFrac(s.id, 7) * 0.7));
+            const bwPct = Math.min(100, Math.round(bwUsed / bwCap * 100));
+            return `<div class="usage-card">
+              <div class="usage-head"><strong>${s.planName}</strong><small>${s.id}${s.domain ? ' · ' + s.domain : ''}</small></div>
+              <div class="usage-metric">
+                <div class="um-top"><span>💾 Penyimpanan</span><span>${usedGB} / ${totalGB} GB</span></div>
+                <div class="usage-bar"><i class="${cls(stPct)}" style="width:${stPct}%"></i></div>
+              </div>
+              <div class="usage-metric">
+                <div class="um-top"><span>📶 Bandwidth (bulan ini)</span><span>${bwUsed} / ${bwCap} GB</span></div>
+                <div class="usage-bar"><i class="${cls(bwPct)}" style="width:${bwPct}%"></i></div>
+              </div>
+            </div>`;
+          }).join('');
+        }
+
+        // --- Banner tagihan tertunda ---
+        const ba = document.getElementById('billAlert');
+        if (pending.length) {
+          const totalDue = pending.reduce((s,i) => s + i.amount, 0);
+          ba.innerHTML = `<div class="pay-alert">⏳ Anda punya <strong>${pending.length} tagihan belum dibayar</strong> senilai <strong>${rp(totalDue)}</strong>. Klik "Bayar" di tabel di bawah.</div>`;
+        } else { ba.innerHTML = ''; }
+
+        // --- Tagihan ---
+        const ia = document.getElementById('invoicesArea');
+        if (!invs.length) {
+          ia.innerHTML = `<div class="empty"><div class="e-ic">🧾</div><p>Belum ada tagihan.</p></div>`;
+        } else {
+          ia.innerHTML = `<div class="table-wrap"><table class="table">
+            <thead><tr><th>No. Invoice</th><th>Tanggal</th><th>Keterangan</th><th>Jumlah</th><th>Status</th><th>Aksi</th></tr></thead>
+            <tbody>${invs.map(inv => {
+              const paid = inv.status === 'paid';
+              return `
+              <tr>
+                <td>${inv.id}</td>
+                <td>${fmtDate(inv.date)}</td>
+                <td>${inv.desc}</td>
+                <td>${rp(inv.amount)}</td>
+                <td><span class="tag ${paid ? 'tag-green' : 'tag-amber'}">${paid ? 'Lunas' : 'Belum dibayar'}</span></td>
+                <td>${paid ? '<span style="color:var(--muted)">—</span>' : `<button class="btn btn-primary btn-xs" data-action="pay" data-id="${inv.id}">Bayar</button>`}</td>
+              </tr>`;
+            }).join('')}
+            </tbody></table></div>`;
+        }
+
+        // --- Tiket ---
+        const ta = document.getElementById('ticketsArea');
+        const tks = Tickets.mine().slice().sort((a, b) => b.createdAt - a.createdAt);
+        if (!tks.length) {
+          ta.innerHTML = `<div class="empty"><div class="e-ic">🎫</div><p>Belum ada tiket. <a href="bantuan.html" style="color:var(--indigo);font-weight:600">Buat tiket pertama →</a></p></div>`;
+        } else {
+          ta.innerHTML = `<div class="table-wrap"><table class="table">
+            <thead><tr><th>ID</th><th>Subjek</th><th>Tanggal</th><th>Status</th><th>Aksi</th></tr></thead>
+            <tbody>${tks.map(t => `
+              <tr>
+                <td>${t.id}</td>
+                <td>${t.subject}</td>
+                <td>${fmtDate(t.createdAt)}</td>
+                <td><span class="tag ${t.status === 'open' ? 'tag-amber' : 'tag-green'}">${t.status === 'open' ? 'Terbuka' : 'Selesai'}</span></td>
+                <td><button class="btn btn-outline btn-xs" data-action="ticket" data-id="${t.id}">Lihat</button></td>
+              </tr>`).join('')}
+            </tbody></table></div>`;
+        }
+
+        // --- Keamanan (ganti password) ---
+        const se = document.getElementById('securityArea');
+        if (user.provider === 'google') {
+          se.innerHTML = `<div class="demo-note">🔐 Akun ini masuk lewat <strong>Login Google</strong>, jadi tidak punya kata sandi terpisah di sini. Kelola keamanan & sandi langsung di akun Google Anda.</div>`;
+        } else {
+          se.innerHTML = `<form id="pwForm" style="max-width:460px">
+            <div class="field"><label for="curPw">Kata sandi saat ini</label><input type="password" id="curPw" autocomplete="current-password" /></div>
+            <div class="field"><label for="newPw">Kata sandi baru</label><input type="password" id="newPw" autocomplete="new-password" /><span class="hint">Minimal 6 karakter.</span></div>
+            <div class="field"><label for="newPw2">Ulangi kata sandi baru</label><input type="password" id="newPw2" autocomplete="new-password" /></div>
+            <button type="submit" class="btn btn-primary">Ganti Kata Sandi</button>
+          </form>`;
+        }
+      }
+      render();
+
+      /* ---------- MODAL: Ubah paket (upgrade/downgrade) ---------- */
+      function openUpgrade(id) {
+        const s = Services.mine().find(x => x.id === id); if (!s) return;
+        const opts = Object.entries(PLANS).map(([k,p]) =>
+          `<option value="${k}" ${k===s.plan?'selected':''}>${p.name} — ${rp(Services.priceFor(k, s.cycle))}/${cycleShort(s.cycle)}</option>`).join('');
+        const { root } = modal({
+          title: 'Ubah Paket Layanan',
+          body: `<p>Layanan <strong>${s.id}</strong> — saat ini <strong>${s.planName}</strong> (${cycleLabel(s.cycle)}).</p>
+            <div class="field"><label for="mPlan">Pilih paket baru</label><select id="mPlan">${opts}</select></div>
+            <p id="mDiff" style="margin:0"></p>`,
+          actions: [
+            { label: 'Batal', variant: 'btn-outline' },
+            { label: 'Terapkan', variant: 'btn-primary', onClick: (close) => {
+                const newKey = root.querySelector('#mPlan').value;
+                if (newKey === s.plan) { toast('Paket tidak berubah.', 'info'); close(); return; }
+                const res = Services.changePlan(id, newKey);
+                if (res.diff > 0)
+                  Billing.add({ serviceId: id, type: 'upgrade', cycle: s.cycle, amount: res.diff, status: 'paid',
+                    desc: `Upgrade ke ${res.service.planName} (selisih ${cycleLabel(s.cycle).toLowerCase()})` });
+                else
+                  Billing.add({ serviceId: id, type: 'downgrade', cycle: s.cycle, amount: 0, status: 'paid',
+                    desc: `Ubah paket ke ${res.service.planName}` });
+                toast(`Paket diubah ke ${res.service.planName}. ✅`);
+                close(); render();
+            }},
+          ],
+        });
+        const sel = root.querySelector('#mPlan'), diffEl = root.querySelector('#mDiff');
+        const showDiff = () => {
+          const newKey = sel.value, newPrice = Services.priceFor(newKey, s.cycle), d = newPrice - s.price;
+          diffEl.innerHTML = newKey === s.plan
+            ? '<small style="color:var(--muted)">Paket sama dengan sekarang.</small>'
+            : d > 0 ? `Selisih biaya periode ini ditagih sekarang: <strong>${rp(d)}</strong> (langsung lunas).`
+            : `Harga baru <strong>${rp(newPrice)}/${cycleShort(s.cycle)}</strong>, berlaku mulai sekarang. Tanpa biaya tambahan.`;
+        };
+        sel.addEventListener('change', showDiff); showDiff();
+      }
+
+      /* ---------- MODAL: Perpanjang ---------- */
+      function openRenew(id) {
+        const s = Services.mine().find(x => x.id === id); if (!s) return;
+        modal({
+          title: 'Perpanjang Layanan',
+          body: `<p>Perpanjang <strong>${s.planName}</strong> (${s.id}) untuk <strong>${s.cycle==='yearly'?'1 tahun':'1 bulan'}</strong> berikutnya.</p>
+            <span class="amt-big">${rp(s.price)}</span>
+            <p style="margin:0"><small style="color:var(--muted)">Tagihan dibuat sebagai <strong>Belum dibayar</strong>. Bayar dari tabel Tagihan untuk memperpanjang masa aktif.</small></p>`,
+          actions: [
+            { label: 'Batal', variant: 'btn-outline' },
+            { label: 'Buat Tagihan', variant: 'btn-primary', onClick: (close) => {
+                Billing.add({ serviceId: id, type: 'perpanjang', cycle: s.cycle, amount: s.price, status: 'pending',
+                  desc: `Perpanjangan ${s.planName} (${s.cycle==='yearly'?'1 tahun':'1 bulan'})` });
+                toast('Tagihan perpanjangan dibuat. Silakan bayar di tabel Tagihan. 🧾', 'info');
+                close(); render();
+                document.getElementById('tagihan').scrollIntoView({ behavior: 'smooth' });
+            }},
+          ],
+        });
+      }
+
+      /* ---------- MODAL: Bayar tagihan ---------- */
+      function openPay(invId) {
+        const inv = Billing.mine().find(i => i.id === invId);
+        if (!inv || inv.status === 'paid') return;
+        modal({
+          title: 'Bayar Tagihan',
+          body: `<p>${inv.desc}</p><span class="amt-big">${rp(inv.amount)}</span>
+            <div class="field"><label for="mPay">Metode pembayaran</label>
+              <select id="mPay"><option>QRIS / E-Wallet</option><option>Transfer Bank</option><option>Kartu Kredit / Debit</option></select></div>
+            <p style="margin:0"><small style="color:var(--muted)">🔒 Simulasi — tidak ada uang nyata yang diproses.</small></p>`,
+          actions: [
+            { label: 'Batal', variant: 'btn-outline' },
+            { label: 'Bayar Sekarang', variant: 'btn-primary', onClick: (close) => {
+                Billing.pay(invId);
+                toast('Pembayaran berhasil! Tagihan lunas. 🎉');
+                close(); render();
+            }},
+          ],
+        });
+      }
+
+      /* ---------- MODAL: Lihat / balas tiket ---------- */
+      function openTicket(id) {
+        const t = Tickets.get(id); if (!t) return;
+        const fmtT = (ts) => new Date(ts).toLocaleString('id-ID', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
+        const thread = t.replies.map(r =>
+          `<div class="tk-msg ${r.from}"><span class="tk-who">${r.from === 'user' ? 'Anda' : 'Tim Dukungan'} · ${fmtT(r.at)}</span>${r.text.replace(/</g, '&lt;')}</div>`).join('');
+        const closed = t.status === 'closed';
+        const { root } = modal({
+          title: `${t.id} · ${t.subject}`,
+          body: `<div class="ticket-thread">${thread}</div>` +
+            (closed ? '<p style="margin:0;color:var(--muted)">✔️ Tiket ini sudah ditutup.</p>'
+                    : `<div class="field" style="margin-bottom:0"><textarea id="tkReply" rows="2" placeholder="Tulis balasan…"></textarea></div>`),
+          actions: closed
+            ? [{ label: 'Tutup', variant: 'btn-outline' }]
+            : [
+                { label: 'Tutup Tiket', variant: 'btn-danger', onClick: (close) => { Tickets.close(id); toast('Tiket ditutup.', 'info'); close(); render(); } },
+                { label: 'Kirim Balasan', variant: 'btn-primary', onClick: (close) => {
+                    const txt = root.querySelector('#tkReply').value.trim();
+                    if (!txt) { toast('Tulis balasan dulu.', 'error'); return; }
+                    Tickets.reply(id, txt); toast('Balasan terkirim. ✅');
+                    close(); render(); openTicket(id);
+                }},
+              ],
+        });
+      }
+
+      /* ---------- DELEGASI: klik tombol aksi (layanan & tagihan) ---------- */
+      document.querySelector('.dash-main').addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-action]'); if (!btn) return;
+        const id = btn.dataset.id;
+        if (btn.dataset.action === 'upgrade') openUpgrade(id);
+        else if (btn.dataset.action === 'renew') openRenew(id);
+        else if (btn.dataset.action === 'pay') openPay(id);
+        else if (btn.dataset.action === 'ticket') openTicket(id);
+        else if (btn.dataset.action === 'del') {
+          modal({
+            title: 'Hapus Layanan?',
+            body: `<p>Layanan <strong>${id}</strong> akan dihapus permanen beserta tagihan tertundanya. Riwayat tagihan lunas tetap tersimpan.</p>`,
+            actions: [
+              { label: 'Batal', variant: 'btn-outline' },
+              { label: 'Hapus', variant: 'btn-danger', onClick: (close) => {
+                  Services.remove(id); toast('Layanan dihapus.', 'info'); close(); render();
+              }},
+            ],
+          });
+        }
+      });
+
+      /* ---------- DELEGASI: submit form (profil & ganti password) ---------- */
+      document.querySelector('.dash-main').addEventListener('submit', (e) => {
+        if (e.target.id === 'profileForm') {
+          e.preventDefault();
+          const newName = document.getElementById('pName').value.trim();
+          if (!newName) return;
+          const users = Auth.users();
+          const idx = users.findIndex(u => u.email === user.email);
+          if (idx > -1) { users[idx].name = newName; Auth.saveUsers(users); }
+          toast('Profil diperbarui! ✅');
+          setTimeout(() => location.reload(), 700);
+        }
+        else if (e.target.id === 'pwForm') {
+          e.preventDefault();
+          const cur = document.getElementById('curPw').value;
+          const np  = document.getElementById('newPw').value;
+          const np2 = document.getElementById('newPw2').value;
+          if (np !== np2) { toast('Konfirmasi kata sandi tidak cocok.', 'error'); return; }
+          try {
+            Auth.changePassword({ currentPassword: cur, newPassword: np });
+            toast('Kata sandi berhasil diganti! ✅');
+            e.target.reset();
+          } catch (err) { toast(err.message, 'error'); }
+        }
+      });
+
+      // Reset data demo
+      document.getElementById('resetData').addEventListener('click', () => {
+        if (!confirm('Hapus SEMUA data demo (akun, layanan, tagihan, sesi)? Tindakan ini tidak bisa dibatalkan.')) return;
+        ['nh_users','nh_session','nh_services','nh_invoices','nh_invseq','nh_cart','nh_tickets','nh_ticketseq'].forEach(store.del);
+        toast('Semua data demo dihapus.', 'info');
+        setTimeout(() => location.href = 'index.html', 900);
+      });
+
+      // smooth scroll & active state sidebar
+      document.querySelectorAll('.dash-nav a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.querySelectorAll('.dash-nav a').forEach(x => x.classList.remove('active'));
+          a.classList.add('active');
+          document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
