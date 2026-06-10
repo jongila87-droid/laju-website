@@ -906,3 +906,17 @@ body { top: 0 !important; }
 .dom-price { margin-left: auto; color: var(--slate); font-size: .86rem; }
 .dom-row .btn { padding: 6px 14px; }
 @media (max-width: 560px) { .dom-price { margin-left: 0; } }
+
+/* ===================================================
+   HERO — Video latar belakang full-screen (loop 2 video)
+   =================================================== */
+.hero { overflow: hidden; min-height: 74vh; display: flex; align-items: center; }
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; pointer-events: none; background: #0b1020; }
+.hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(10,14,28,.70) 0%, rgba(10,14,28,.86) 100%); }
+.hero > .container { position: relative; z-index: 2; width: 100%; }
+/* Teks hero dibuat terang agar terbaca jelas di atas video */
+.hero .badge { background: rgba(255,255,255,.16); color: #fff; backdrop-filter: blur(4px); }
+.hero-text h1 { color: #fff; }
+.hero .lead { color: rgba(255,255,255,.86); }
+.hero-points { color: rgba(255,255,255,.92); }
+@media (max-width: 760px) { .hero { min-height: auto; } }

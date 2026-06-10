@@ -6,6 +6,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ---------- Video latar hero: putar 2 video bergantian (loop) ---------- */
+  const heroVideo = document.getElementById('heroVideo');
+  if (heroVideo) {
+    const clips = ['bg-video-1.mp4', 'bg-video-2.mp4']; // ganti dengan video Anda
+    let ci = 0;
+    const playClip = (i) => { heroVideo.src = clips[i]; heroVideo.load(); heroVideo.play().catch(() => {}); };
+    heroVideo.addEventListener('ended', () => {
+      if (heroVideo.currentTime < 1) return; // abaikan 'ended' palsu di awal
+      ci = (ci + 1) % clips.length; playClip(ci);
+    });
+    playClip(0);
+  }
+
   /* ---------- Cek domain (simulasi realistis multi-TLD) ---------- */
   const domainForm = document.getElementById('domainForm');
   const domainInput = document.getElementById('domainInput');
