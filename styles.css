@@ -920,3 +920,14 @@ body { top: 0 !important; }
 .hero .lead { color: rgba(255,255,255,.86); }
 .hero-points { color: rgba(255,255,255,.92); }
 @media (max-width: 760px) { .hero { min-height: auto; } }
+
+/* ===================================================
+   DASHBOARD — Video latar belakang (fixed, di belakang konten)
+   =================================================== */
+.dash-bg { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; pointer-events: none; background: #0b1020; }
+.dash-bg-overlay { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(180deg, rgba(9,13,26,.80) 0%, rgba(9,13,26,.90) 100%); }
+body.dash-bg-on { background: transparent; }
+body.dash-bg-on .dash { background: transparent; }
+/* judul dashboard dibuat terang agar terbaca di atas video */
+body.dash-bg-on .dash-welcome h1 { color: #fff; }
+body.dash-bg-on .dash-welcome p { color: rgba(255,255,255,.86); }
