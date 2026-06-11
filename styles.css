@@ -931,3 +931,22 @@ body.dash-bg-on .dash { background: transparent; }
 /* judul dashboard dibuat terang agar terbaca di atas video */
 body.dash-bg-on .dash-welcome h1 { color: #fff; }
 body.dash-bg-on .dash-welcome p { color: rgba(255,255,255,.86); }
+/* Kartu dashboard TRANSPARAN (efek kaca) di atas video — struktur menu tetap, kotak jelas lewat border */
+body.dash-bg-on .dash {
+  --card: rgba(12, 18, 34, 0.34);   /* transparan: video tembus ~66% */
+  --ink: #f3f6fb;
+  --slate: rgba(255, 255, 255, 0.82);
+  --muted: rgba(255, 255, 255, 0.64);
+  --line: rgba(255, 255, 255, 0.22);
+  color: var(--ink);   /* agar judul & angka (yang mewarisi warna) ikut terang */
+}
+body.dash-bg-on .dash-side,
+body.dash-bg-on .kpi,
+body.dash-bg-on .panel {
+  border: 1px solid rgba(255, 255, 255, 0.24);   /* garis tepi jelas → kotak tetap terlihat */
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 10px 30px -14px rgba(0, 0, 0, .5);
+}
+body.dash-bg-on .dash input,
+body.dash-bg-on .dash select,
+body.dash-bg-on .dash textarea { background: rgba(255, 255, 255, .92); color: #1f2440; }
