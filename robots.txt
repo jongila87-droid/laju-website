@@ -3,4 +3,4 @@ Allow: /
 Disallow: /dashboard.html
 Disallow: /checkout.html
 
-Sitemap: https://lajucloud.id/sitemap.xml
+Sitemap: https://www.lajucloud.my.id/sitemap.xml
