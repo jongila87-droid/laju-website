@@ -411,7 +411,7 @@
         <a href="index.html" class="logo logo-light">${logoSvg}<span>laju<strong>cloud</strong></span></a>
         <p class="foot-desc">Online lebih laju — hosting cepat, aman, dan dipandu sampai jadi. Dibuat dengan ❤️ di Indonesia.</p>
         <div class="foot-social">
-          <a href="https://instagram.com/lajucloud" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <a href="https://www.instagram.com/laju_cloud/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           </a>
           <a href="https://facebook.com/lajucloud" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
