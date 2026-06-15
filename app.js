@@ -417,7 +417,7 @@
           <a href="https://facebook.com/lajucloud" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12H16l-.4 2.9h-2.1v7A10 10 0 0 0 22 12z"/></svg>
           </a>
-          <a href="https://tiktok.com/@lajucloud" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+          <a href="https://www.tiktok.com/@lajucloud" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.1 1.5 3.6 3.5 3.9v2.6c-1.3.1-2.5-.3-3.6-1v5.9c0 3.3-2.5 5.6-5.5 5.6S5.4 17.7 5.4 14.7c0-2.9 2.3-5.3 5.4-5v2.7c-.4-.1-.8-.2-1.2-.2-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.6-1.1 2.6-2.6V3h3.8z"/></svg>
           </a>
           <a href="https://youtube.com/@lajucloud" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
